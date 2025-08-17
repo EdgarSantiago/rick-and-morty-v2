@@ -15,7 +15,11 @@ export type Character = {
   image?: string | null;
   status?: string | null;
   species?: string | null;
-  origin?: { name?: string | null } | null;
+  type?: string | null;
+  gender?: string | null;
+  origin?: { id?: string | null; name?: string | null } | null;
+  location?: { id?: string | null; name?: string | null } | null;
+  episode?: ({ id: string; name?: string | null; air_date?: string | null; episode?: string | null } | null)[] | null;
 };
 
 export type CharactersInfo = {
@@ -64,7 +68,7 @@ export type Location = {
   name?: string | null;
   type?: string | null;
   dimension?: string | null;
-  residents?: ({ id: string } | null)[] | null;
+  residents?: ({ id: string; name?: string | null; image?: string | null } | null)[] | null;
 };
 
 export type LocationsInfo = {
@@ -111,7 +115,7 @@ export type Episode = {
   name?: string | null;
   air_date?: string | null;
   episode?: string | null;
-  characters?: ({ id: string } | null)[] | null;
+  characters?: ({ id: string; name?: string | null; image?: string | null } | null)[] | null;
 };
 
 export type EpisodesInfo = {

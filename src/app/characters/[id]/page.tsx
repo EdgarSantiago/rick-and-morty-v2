@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getCharacter } from '@/lib/data';
-import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, MapPin, HeartPulse, Skull, HelpCircle, User as UserIcon, Orbit, Bot, PawPrint } from 'lucide-react';

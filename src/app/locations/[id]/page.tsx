@@ -5,7 +5,7 @@ import { Card } from '@/components/ui/card';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Globe2, Tag, Users } from 'lucide-react';
+import { ArrowLeft, Globe2, Tag } from 'lucide-react';
 
 export const revalidate = 3600;
 
