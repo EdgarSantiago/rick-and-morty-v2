@@ -1,15 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Space_Grotesk, JetBrains_Mono, Changa_One } from "next/font/google";
 import "./globals.css";
+import { Navbar } from '@/components/navbar';
 
-const geistSans = Geist({
+const geistSans = Space_Grotesk({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
+const geistMono = JetBrains_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const displayFont = Changa_One({
+  variable: "--font-display",
+  weight: ["400"],
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -24,10 +34,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} ${displayFont.variable} antialiased`}> 
+        <a
+          href="#content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded-md focus:bg-background focus:px-3 focus:py-2"
+        >
+          Skip to content
+        </a>
+        <Navbar />
+        {/* Spacer for fixed navbar height */}
+        <div className="h-16" />
+        <main id="content">{children}</main>
       </body>
     </html>
   );
